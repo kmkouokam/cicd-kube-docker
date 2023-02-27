@@ -3,7 +3,7 @@ pipeline {
     agent any
 /*
 	tools {
-        maven "maven3"
+        maven "maven"
     }
 */
     environment {
@@ -15,7 +15,7 @@ pipeline {
 
         stage('Fetch Code') {
             steps {
-                git branch: 'paac', url: 'https://github.com/devopshydclub/vprofile-project.git'
+                git branch: 'master', url: 'https://github.com/kmkouokam/cicd-kube-docker.git'
             }
         }
         stage('BUILD'){
