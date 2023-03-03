@@ -1,11 +1,12 @@
 pipeline {
 
     agent any
-/*
+
 	tools {
-        maven "maven"
+        maven "maven3"
+        jdk "OracleJDK8"
     }
-*/
+
     environment {
          registry = "kmkouokam/vproappdock"
          registryCredential = "dockerhub"
@@ -56,11 +57,11 @@ pipeline {
         stage('CODE ANALYSIS with SONARQUBE') {
 
             environment {
-                scannerHome = tool 'mysonarscanner4'
+                scannerHome = tool 'sonar4.8'
             }
 
             steps {
-                withSonarQubeEnv('sonar-pro') {
+                withSonarQubeEnv('sonar') {
                     sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                    -Dsonar.projectName=vprofile-repo \
                    -Dsonar.projectVersion=1.0 \
