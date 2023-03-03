@@ -14,11 +14,11 @@ pipeline {
 
     stages{
 
-        stage('Fetch Code') {
+       /* stage('Fetch Code') {
             steps {
                 git branch: 'master', url: 'https://github.com/kmkouokam/cicd-kube-docker.git'
             }
-        }
+        */}
         stage('BUILD'){
             steps {
                 sh 'mvn clean install -DskipTests'
