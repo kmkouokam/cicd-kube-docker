@@ -18,7 +18,8 @@ pipeline {
             steps {
                 git branch: 'master', url: 'https://github.com/kmkouokam/cicd-kube-docker.git'
             }
-        */}
+          }
+          */
         stage('BUILD'){
             steps {
                 sh 'mvn clean install -DskipTests'
