@@ -20,6 +20,8 @@ spec:
         ports:
         - name: vproapp-port
           containerPort: 8080
+      nodeSelector:
+        zone: us-east-1a
       initContainers:
       - name: init-mydb
         image: busybox
